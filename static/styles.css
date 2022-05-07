@@ -1,0 +1,32 @@
+/* Format the table on the View Financials page. */
+table {
+    font-size: 12px;
+}
+
+/* Format the navigation bar at the top of the page. */
+.navbar-light .navbar-nav .nav-link {
+    color: black;
+    font-weight: normal;
+}
+
+/* Color the SEC hyperlink (on the About page). */
+#sec-url a {
+    color: #F37021;
+}
+
+/* Color the error message hyperlink (telling users to select a company). */
+#select-company a {
+    color: #F37021;
+}
+
+/* Color the thanks message hyperlink. */
+#thanks-link a {
+   color: #F37021;
+}
+
+/* Format the project name (appearing at the top-left corner of the page). */
+  #project-name a {
+      font-size: 1.5rem;
+      color: black;
+      text-decoration: none;
+  }

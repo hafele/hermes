@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Financials
+{% endblock %}
+
+{% block main %}
+    <form action="/export" method="post">
+        <div class="d-grid gap-2 d-md-flex justify-content-md-begin">
+            <button class="btn btn-secondary btn-sm" type="export">Export to CSV</button>
+        </div>
+    </form>
+    <br>
+    <br>
+    <table class="table table-sm">
+        <thead>
+            <tr>
+                <th>CIK</th>
+                <th>Company</th>
+                <th>Start Date</th>
+                <th>End Date</th>
+                <th>Fiscal Year</th>
+                <th>Fiscal Period</th>
+                <th>Form</th>
+                <th>Account</th>
+                <th>Units</th>
+                <th>Value</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for financial in financials %}
+            <tr>
+                <td>{{ financial["cik"] }}</td>
+                <td>{{ financial["entity_name"] }}</td>
+                <td>{{ financial["start"] }}</td>
+                <td>{{ financial["end"] }}</td>
+                <td>{{ financial["fy"] }}</td>
+                <td>{{ financial["fp"] }}</td>
+                <td>{{ financial["form"] }}</td>
+                <td>{{ financial["account"] }}</td>
+                <td>{{ financial["units"] }}</td>
+                <td>{{ format_number(financial["val"]) }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
